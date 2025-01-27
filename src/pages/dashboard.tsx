@@ -25,7 +25,6 @@ const Dashboard = ({data}: Props) => {
 }
 
 export const getStaticProps = async () => {
-  console.log('here')
   const req = await fetch('https://jsonplaceholder.typicode.com/todos')
   const res = await req.json()
 
