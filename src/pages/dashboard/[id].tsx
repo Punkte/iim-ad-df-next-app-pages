@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const req = await fetch('https://jsonplaceholder.typicode.com/todos')
   const res = await req.json() as TodoItem[]
 
-  const paths = res.map((todo) => ({
+  const paths = res.slice(0, 20).map((todo) => ({
     params: {id: `${todo.id}`}
   }))
 
